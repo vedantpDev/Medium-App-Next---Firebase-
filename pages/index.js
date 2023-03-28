@@ -1,8 +1,12 @@
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import PostCard from "@/components/PostCard";
+import { MediumContext } from "../context/mediumContext";
+import { useContext } from "react";
 
 export default function Home() {
+  const { users } = useContext(MediumContext);
+  console.log(users);
   return (
     <div className="mx-auto">
       <Header />
