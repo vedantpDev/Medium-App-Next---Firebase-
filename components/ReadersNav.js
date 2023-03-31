@@ -15,7 +15,7 @@ const ReadersNav = () => {
       <Link href={"/"}>
         <div className="cursor-pointer">
           {/* Logo Container */}
-          <Image src={logo} height={200} width={200} />
+          <Image alt="#" src={logo} height={200} width={200} />
         </div>
       </Link>
       <div>
@@ -31,6 +31,7 @@ const ReadersNav = () => {
       <div className="rounded-full overflow-hidden place-items-center">
         {/* Profile Image conatiner */}
         <Image
+          alt="#"
           className="object-cover"
           src={profileLogo}
           height={100}

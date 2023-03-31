@@ -15,7 +15,7 @@ const Banner = () => {
         </button>
       </div>
       <div>
-        <Image className="" src={bannerImg} alt="#" height={400} width={500} />
+        <Image alt="#" className="" src={bannerImg} height={400} width={500} />
       </div>
     </div>
   );

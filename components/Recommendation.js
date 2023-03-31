@@ -49,13 +49,19 @@ const Recommendation = ({ author }) => {
                 <div className="flex-4">
                   <div className="flex items-center gap-[.6rem]">
                     <div className="rounded-full overflow-hidden h-[1.4rem] w-[1.4rem]">
-                      <Image src={post.author.image} height={100} width={100} />
+                      <Image
+                        alt="#"
+                        src={post.author.image}
+                        height={100}
+                        width={100}
+                      />
                     </div>
                     <div className="text-sm">{post.author.name}</div>
                   </div>
                   <div className="font-bold">{post.title}</div>
                 </div>
                 <Image
+                  alt="#"
                   className="object-cover"
                   src={post.image}
                   height={100}

@@ -10,7 +10,7 @@ import { BiBookmarks } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import bannerImg from "../image/banner.png";
 
-const ArticleMain = () => {
+const ArticleMain = ({ post, author }) => {
   return (
     <div className="flex items-center justify-center flex-[1] border-l border-r">
       <div className="h-screen w-full p-[2rem]">
@@ -18,6 +18,7 @@ const ArticleMain = () => {
           <div className="flex gap-[1rem]">
             <div className="h-[3rem] w-[3rem] grid center rounded-full overflow-hidden">
               <Image
+                alt="#"
                 className="object-cover"
                 src={monkeyPic}
                 width={100}
@@ -50,6 +51,7 @@ const ArticleMain = () => {
         <div className="flex flex-col gap-[1rem]">
           <div className="h-[18rem] w-full grid center overflow-hidden mb-[2rem]">
             <Image
+              alt="#"
               src={bannerImg}
               className="h-[18rem] w-full"
               height={100}

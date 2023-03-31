@@ -24,6 +24,21 @@ const MediumProvider = ({ children }) => {
     getUsers();
   }, []);
 
+  useEffect(() => {
+    const getPosts = async () => {
+      const queryShanpshot = await getDocs(collection(db, "articles"));
+      setPosts(
+        queryShanpshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            data: doc.data(),
+          };
+        })
+      );
+    };
+    getPosts();
+  }, []);
+
   return (
     <MediumContext.Provider value={{ posts, users }}>
       {children}
