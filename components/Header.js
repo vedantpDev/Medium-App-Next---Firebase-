@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { MediumContext } from "@/context/mediumContext";
 
 const Header = () => {
+  const { user, handleUserAuth } = useContext(MediumContext);
   return (
     <div className={"flex justify-center gap-10 p-5 bg-[#fcc017]"}>
       <div className={"max-w-7xl flex-1 flex justify-between gap-10"}>
@@ -14,14 +16,27 @@ const Header = () => {
             width={200}
           />
         </div>
-        <div className={"flex cursor-pointer items-center space-x-5"}>
-          <div>Our Story</div>
-          <div>Membership</div>
-          <div>Sign In</div>
-          <div className="bg-black text-white py-2 px-4 rounded-full">
-            Get Started
+        {user ? (
+          <div className={"flex cursor-pointer items-center space-x-5"}>
+            <div>Our Story</div>
+            <div>Membership</div>
+            <div className="bg-black text-white py-2 px-4 rounded-full">
+              Write
+            </div>
+            <div className="bg-black text-white py-2 px-4 rounded-full">
+              Get Unlimited Access
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className={"flex cursor-pointer items-center space-x-5"}>
+            <div>Our Story</div>
+            <div>Membership</div>
+            <div onClick={handleUserAuth}>Sign In</div>
+            <div className="bg-black text-white py-2 px-4 rounded-full">
+              Get Started
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
